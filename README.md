@@ -1,5 +1,7 @@
 # nvim-jack-in
 
+Took a copy of the original as the domain became unavailable.
+
 ---
 Jack in to CLJ & Leiningen REPLs from Neovim. Inspired by [vim-jack-in](https://github.com/clojure-vim/vim-jack-in)
 
