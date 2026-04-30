@@ -3,6 +3,7 @@
 Took a copy of the original as the repository under "https://tangled.org/treybastian.com/nvim-jack-in" became unavailable.
 
 ---
+
 Jack in to CLJ & Leiningen REPLs from Neovim. Inspired by [vim-jack-in](https://github.com/clojure-vim/vim-jack-in)
 
 ## Installation
@@ -26,7 +27,8 @@ Jack in to CLJ & Leiningen REPLs from Neovim. Inspired by [vim-jack-in](https://
 }
 
 ```
-### vim.pack 
+
+### vim.pack
 
 ```lua
 vim.pack.add{'https://tangled.org/treybastian.com/nvim-jack-in', config = true}
@@ -42,8 +44,6 @@ require('nvim-jack-in').setup({
     force_powershell = true,
 })
 ```
-
-
 
 ### Options
 
@@ -110,6 +110,19 @@ Force the usage of powershell. In windows setting `vim.o.shell = powershell` mig
 
 ```lua
 force_powershell = false
+```
+
+#### `cwd`
+
+The directory where the repl command will be executed.
+
+##### Default
+
+```lua
+ -- start the nrepl in the root directory of the project so that the .nrepl-port file is created there
+ cwd = function()
+   return vim.fs.root(0, { "deps.edn", "project.clj", "shadow-cljs.edn", "build.boot", ".git" })
+ end,
 ```
 
 ## Usage
