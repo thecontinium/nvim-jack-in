@@ -103,6 +103,7 @@ local function jack_in(execution_string)
     -- swap to the previous buffer if available
     vim.cmd("bp")
   end
+  vim.notify("Jack-In Started in [ " .. vim.fn.fnamemodify(cwd, ":t") .. " ]", vim.log.levels.INFO)
 end
 
 function M.setup(user_opts)
